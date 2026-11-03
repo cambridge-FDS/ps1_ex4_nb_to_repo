@@ -2,7 +2,8 @@
 
 ## Start here
 
-The PS2 setup uses Python 3.12 and a committed lock file. Four platforms are
+The PS2 setup uses Python 3.13.16, pandas 2.3 series, and a committed
+conda-forge Pixi lock file. Four platforms are
 resolved: macOS Apple Silicon, macOS Intel, Linux x86-64, and Windows x86-64.
 Runtime validation is performed on macOS Apple Silicon; other platforms are
 dependency-resolved, not runtime-tested. Install Pixi from https://pixi.sh/ .
@@ -25,7 +26,7 @@ reviews, notebook editing, and local-file rules.
 - `report.ipynb`: valid EMPTY notebook for the new report, no analysis or text supplied.
 - `figures/`: final figures, tracked by Git.
 - `pixi.toml` + `pixi.lock`: the shared portable PS2 environment.
-- `environment.yml`: retained PS1 environment history; use Pixi for PS2 collaboration.
+- `environment.yml`: retained PS1 defaults-based environment history; it is not the same dependency snapshot as the PS2 Pixi lock. Use Pixi for PS2 collaboration.
 
 Keep the report at 500 words or fewer, excluding graphs. Each chosen visualisation
 must justify a feature-selection decision. Review existing figures and favour a
@@ -35,12 +36,38 @@ integrates the final notebook. No feature selections or conclusions are prefille
 
 ## Setup verification
 
-Verified on 2026-11-03 with Python 3.12.16 on macOS Apple Silicon.
-Checks passed: notebook valid: Titanic_Data_Journey.ipynb; notebook valid: report.ipynb; headless PNG rendering; existing functions import and supplied Titanic CSVs readable; fresh Jupyter kernel executes disposable Python/pandas cell.
-Other platforms were lock-resolved only. No coursework analysis, answers,
-model training, or Kaggle data download was performed.
+Verified on 2026-11-03 with Python **3.13.16** and pandas **2.3.3** on
+macOS Apple Silicon, using the committed lock file.
+
+- Both notebooks validate; `report.ipynb` remains empty.
+- All existing function modules import, and the existing loader reads the supplied CSVs.
+- Both existing plotting helpers render PNGs from disposable synthetic data.
+- A fresh Jupyter kernel runs a temporary cell and confirms Python 3.13.16 and pandas 2.3.
+- Both lock-file environments resolve Python 3.13.16 and pandas 2.3 for all four platforms.
+
+Other platforms were dependency-resolved only, not runtime-tested. No coursework
+analysis, answers, model training, or Kaggle data download was performed.
+
+## README maintenance
+
+The original PS1 README is preserved in
+[`docs/readme-history/README_PS1_original.md`](docs/readme-history/README_PS1_original.md)
+from commit `3929a5a959b1576fabbf3b3257b8367df71711ba`. The README before
+Python alignment is preserved in
+[`docs/readme-history/README_before_python_alignment.md`](docs/readme-history/README_before_python_alignment.md)
+from commit `efdc0d4ea8642c7083a5da975142224445951c03`. Keep these backups unchanged.
+
+When completing the coursework, update this README to explain the selected
+visualisations and the reasoning behind feature-selection decisions, and how to
+run and export the work. Preserve or restore the original PS1 project overview,
+structure, usage instructions, and collaboration guidelines below. The formal
+report remains `report.ipynb` (at most 500 words, excluding graphs); the README
+does not replace it.
 
 ## Original repository instructions (retained)
+
+The following PS1 instructions are preserved unchanged. For PS2 environment
+setup, use the current Pixi commands above.
 
 # Titanic Data Journey — D100 Exercise 4
 
