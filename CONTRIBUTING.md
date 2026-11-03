@@ -1,6 +1,6 @@
 # Team collaboration
 
-Use Python 3.12 and the committed Pixi manifest and lock file. Install Pixi
+Use Python 3.13.16 and the committed Pixi manifest and lock file. Install Pixi
 using its official installer: https://pixi.sh/latest/installation/ .
 Create one branch per task from the current default branch, and merge through
 a pull request. Do not push task changes directly to the default branch.
