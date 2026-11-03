@@ -1,7 +1,7 @@
 # Team collaboration
 
-Use Python 3.13.16 and the committed Pixi manifest and lock file. Install Pixi
-using its official installer: https://pixi.sh/latest/installation/ .
+Use the PS1 Conda environment described by `environment.yml` (Python
+3.13.16 and pandas 2.3); see the README for the machine-specific prefix.
 Create one branch per task from the current default branch, and merge through
 a pull request. Do not push task changes directly to the default branch.
 Ex1 hooks, CSV ignore policy, and type hints need separate coursework PRs
@@ -11,8 +11,8 @@ to review and merge.
 Agree notebook cell ownership before editing. Prefer separate Python modules
 for concurrent code changes; nominate one person to integrate each notebook.
 Every author supplies the explanation for their own analysis. Pull the latest
-default branch before starting a new task. Coordinate dependency changes and
-commit the regenerated pixi.lock with its manifest.
+default branch before starting a new task. Coordinate dependency changes and update `environment.yml` when appropriate,
+without committing a machine-specific prefix.
 
 Local agent prompts/configuration, environments, credentials, and scratch
 work are ignored. Shared project instructions can be deliberately force-added
